@@ -10,7 +10,6 @@ defmodule Measure do
   def count(:regex, str, word) do
     IO.inspect "Regex"
     IO.inspect "-------------"
-    # 指定サイズのDict(Map or HashDict)を作成する無名関数
     f = fn ->
       {_, r} = Regex.compile(word)
       Regex.scan(r, str) |> length
@@ -25,7 +24,6 @@ defmodule Measure do
   def count(:string_split, str, word) do
     IO.inspect "String.split"
     IO.inspect "-------------"
-    # 指定サイズのDict(Map or HashDict)を作成する無名関数
     f = fn ->
       count = String.split(str, word) |> length
       count - 1
